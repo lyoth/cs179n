@@ -95,7 +95,7 @@ Material:
       data:
         first:
           name: _GerstnerIntensity
-        second: 0
+        second: 1
       data:
         first:
           name: _HeightDisplacement
@@ -112,11 +112,11 @@ Material:
       data:
         first:
           name: _DistortParams
-        second: {r: 0, g: 0, b: .100000001, a: 0}
+        second: {r: 1.02857149, g: .201872215, b: 2.76662493, a: -.417142838}
       data:
         first:
           name: _InvFadeParemeter
-        second: {r: .00100000005, g: 0, b: 0, a: 0}
+        second: {r: .275081277, g: .0856210217, b: .0941423923, a: .480310023}
       data:
         first:
           name: _AnimationTiling
@@ -128,19 +128,19 @@ Material:
       data:
         first:
           name: _BumpTiling
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: .0399999991, g: .0399999991, b: .0399999991, a: .0799999982}
       data:
         first:
           name: _BumpDirection
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: 1, g: 30, b: 20, a: -20}
       data:
         first:
           name: _BaseColor
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: .172755614, g: .224076003, b: .24626863, a: .505882382}
       data:
         first:
           name: _ReflectionColor
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: .47582978, g: .606486499, b: .664179087, a: .470588237}
       data:
         first:
           name: _SpecularColor
@@ -149,10 +149,6 @@ Material:
         first:
           name: _WorldLightDir
         second: {r: .0139923692, g: -.173590809, b: -.984718621, a: 0}
-      data:
-        first:
-          name: _Foam
-        second: {r: .327586204, g: .7471264, b: 0, a: 0}
       data:
         first:
           name: _GAmplitude
@@ -177,6 +173,10 @@ Material:
         first:
           name: _GDirectionCD
         second: {r: -.300000012, g: -.899999976, b: .5, a: .5}
+      data:
+        first:
+          name: _Foam
+        second: {r: .327586204, g: .7471264, b: 0, a: 0}
       data:
         first:
           name: _DepthColor

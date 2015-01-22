@@ -1,4 +1,4 @@
-Shader "FX/WaterPro" { 
+Shader "FX/Water" { 
 Properties {
 	_WaveScale ("Wave scale", Range (0.02,0.15)) = 0.063
 	_ReflDistort ("Reflection distort", Range (0,1.5)) = 0.44
@@ -106,7 +106,7 @@ uniform float4 _HorizonColor;
 #endif
 sampler2D _BumpMap;
 
-half4 frag( v2f i ) : COLOR
+half4 frag( v2f i ) : SV_Target
 {
 	i.viewDir = normalize(i.viewDir);
 	

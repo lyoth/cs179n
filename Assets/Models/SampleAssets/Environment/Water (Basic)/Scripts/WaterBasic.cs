@@ -4,13 +4,13 @@ using UnityEngine;
 // for the case where graphics card does not support vertex programs.
 
 [ExecuteInEditMode]
-public class WaterBasic : MonoBehaviour
+public class WaterSimple : MonoBehaviour
 {
 	void Update()
 	{
-		if( !renderer )
+		if( !GetComponent<Renderer>() )
 			return;
-		Material mat = renderer.sharedMaterial;
+		Material mat = GetComponent<Renderer>().sharedMaterial;
 		if( !mat )
 			return;
 			

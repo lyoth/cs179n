@@ -11,13 +11,11 @@ ModelImporter:
     4300002: nurbsToPoly1
     4300004: pCylinder1
     4300006: waterPlaneMesh
-    4300008: WaterBasicPlane
-    4300010: WaterSimplePlane
     11100000: //RootNode
   materials:
-    importMaterials: 0
-    materialName: 1
-    materialSearch: 2
+    importMaterials: 1
+    materialName: 3
+    materialSearch: 1
   animations:
     legacyGenerateAnimations: 0
     bakeSimulation: 0
@@ -66,5 +64,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 1
-  additionalBone: 0
+  additionalBone: 1
   userData: 

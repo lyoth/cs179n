@@ -1,4 +1,4 @@
-Shader "FX/Water (Basic)" {
+Shader "FX/Water (simple)" {
 Properties {
 	_horizonColor ("Horizon color", COLOR)  = ( .172 , .463 , .435 , 0)
 	_WaveScale ("Wave scale", Range (0.02,0.15)) = .07
