@@ -8,7 +8,9 @@ public class ChangeCameras: MonoBehaviour
 	public Camera cameraRight;
 
 	void Start() {
-
+		cameraMain.camera.active = true;
+		cameraLeft.camera.active = false;
+		cameraRight.camera.active = false;
 	}
 	void Update () {
 		if(Input.GetKey("q")){
