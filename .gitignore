@@ -4,11 +4,23 @@
 # =============== #
 # Unity generated #
 # =============== #
-[Tt]emp/
-[Oo]bj/
-[Bb]uild
-[Ll]ibrary/
-sysinfo.txt
+PirateWars/[Tt]emp/
+PirateWars/[Oo]bj/
+PirateWars/[Bb]uild
+PirateWars/[Ll]ibrary/
+PirateWars/sysinfo.txt
+
+Old/[Tt]emp/
+Old/[Oo]bj/
+Old/[Bb]uild
+Old/[Ll]ibrary/
+Old/sysinfo.txt
+
+SpaceShooter/SpaceShooter/[Tt]emp/
+SpaceShooter/SpaceShooter/[Oo]bj/
+SpaceShooter/SpaceShooter/[Bb]uild
+SpaceShooter/SpaceShooter/[Ll]ibrary/
+SpaceShooter/SpaceShooter/sysinfo.txt
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
