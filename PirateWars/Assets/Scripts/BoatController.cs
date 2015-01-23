@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BoatController : MonoBehaviour 
 {
-	float speed = 5.0f;
-	float rotationSpeed = 0.3f;
+	public float speed;
+	public float rotationSpeed;
 	void Update()
 	{
 		rigidbody.AddRelativeForce (Vector3.forward * Input.GetAxis ("Vertical") * speed);
