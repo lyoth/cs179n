@@ -1,4 +1,4 @@
-/.project
+﻿/.project
 
 # Source: http://kleber-swf.com/the-definitive-gitignore-for-unity-projects/
 # =============== #
@@ -28,6 +28,14 @@ SpaceShooter/SpaceShooter/sysinfo.txt
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
 [Ee]xported[Oo]bj/
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln*
+*.user
+*.unityproj
+*.booproj
 /*.userprefs
 /*.csproj
 /*.pidb
