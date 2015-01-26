@@ -29,7 +29,7 @@ SpaceShooter/SpaceShooter/sysinfo.txt
 # ===================================== #
 [Ee]xported[Oo]bj/
 /*.userprefs
-/*.csproj
+*.csproj
 /*.pidb
 /*.suo
 /*.sln*
