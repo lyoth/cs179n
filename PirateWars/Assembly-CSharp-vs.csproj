@@ -190,6 +190,10 @@
      <Compile Include="Assets\Models\SampleAssets\Vehicles\RollerBall\Scripts\BallUserControl.cs" />
      <Compile Include="Assets\Scripts\BoatController.cs" />
      <Compile Include="Assets\Scripts\ChangeCameras.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySight.cs" />
+     <Compile Include="Assets\Scripts\LastPlayerSighting.cs" />
+     <Compile Include="Assets\Scripts\Tags.cs" />
      <None Include="Assets\Models\SampleAssets\Effects\Projectors\ProjectorGuidelines.txt" />
      <None Include="Assets\Models\SampleAssets\Effects\GlassRefraction (Pro Only)\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlendOneOne.shader" />
@@ -305,7 +309,7 @@
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>D:/cs179n/PirateWars/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Keshav/Documents/GitHub/cs179n/PirateWars/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>

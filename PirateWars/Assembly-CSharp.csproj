@@ -190,6 +190,10 @@
      <Compile Include="Assets\Models\SampleAssets\Vehicles\RollerBall\Scripts\BallUserControl.cs" />
      <Compile Include="Assets\Scripts\BoatController.cs" />
      <Compile Include="Assets\Scripts\ChangeCameras.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySight.cs" />
+     <Compile Include="Assets\Scripts\LastPlayerSighting.cs" />
+     <Compile Include="Assets\Scripts\Tags.cs" />
      <None Include="Assets\Models\SampleAssets\Effects\Projectors\ProjectorGuidelines.txt" />
      <None Include="Assets\Models\SampleAssets\Effects\GlassRefraction (Pro Only)\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlendOneOne.shader" />
