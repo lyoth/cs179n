@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +69,7 @@
      <Compile Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Editor\Water (Pro Only)\WaterEditorUtility.cs" />
      <Compile Include="Assets\Models\SampleAssets\Effects\LightShafts\Editor\LightShaftsEditor.cs" />
      <Compile Include="Assets\Models\SampleAssets\Vehicles\Car\Scripts\Editor\WheelEditor.cs" />
+     <Compile Include="Assets\Plugin\TerrainToolkit\Editor\TerrainToolkitEditor.cs" />
      <None Include="Assets\Models\SampleAssets\Effects\Projectors\ProjectorGuidelines.txt" />
      <None Include="Assets\Models\SampleAssets\Effects\GlassRefraction (Pro Only)\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlendOneOne.shader" />
@@ -96,6 +97,7 @@
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\SSAA.shader" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\RadialBlur.shader" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+     <None Include="Assets\Plugin\TerrainToolkit\URL.txt" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ContrastComposite.shader" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\FisheyeShader.shader" />
@@ -180,17 +182,18 @@
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\EdgeDetectX.shader" />
      <None Include="Assets\Models\SampleAssets\Effects\LightShafts\Shaders\ColorFilter.shader" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\ScreenSpaceAmbientObscurance.shader" />
+     <None Include="Assets\Plugin\TerrainToolkit\Read me.txt" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Models\SampleAssets\Effects\ImageEffects (Pro Only)\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +203,8 @@
       <Project>{AF45BB77-1E12-683D-C45E-DE6693252605}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{4F849771-E516-03B1-73FD-6771F8E59CCC}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript.unityproj">
+      <Project>{DAF1EB44-E705-552C-5DAA-E95C46577ECD}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
