@@ -17,12 +17,7 @@ Old/[Ll]ibrary/
 Old/sysinfo.txt
 
 Tutorials/
-
-SpaceShooter/SpaceShooter/[Tt]emp/
-SpaceShooter/SpaceShooter/[Oo]bj/
-SpaceShooter/SpaceShooter/[Bb]uild
-SpaceShooter/SpaceShooter/[Ll]ibrary/
-SpaceShooter/SpaceShooter/sysinfo.txt
+SpaceShooter/SpaceShooter/
  
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
@@ -36,14 +31,6 @@ SpaceShooter/SpaceShooter/sysinfo.txt
 *.user
 *.unityproj
 *.booproj
-/*.userprefs
-/*.csproj
-/*.pidb
-/*.suo
-/*.sln*
-/*.user
-/*.unityproj
-/*.booproj
  
 # ============ #
 # OS generated #
