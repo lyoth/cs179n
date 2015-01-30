@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TerrainDestroyByContact : MonoBehaviour {
 
+	GameObject player;
+	PlayerHealth playerHealth;
 	public float bounce;
 	void OnTriggerEnter(Collider other) 
 	{
@@ -13,6 +15,11 @@ public class TerrainDestroyByContact : MonoBehaviour {
 			return;
 		} 
 		else
+		{
+			player = GameObject.FindGameObjectWithTag ("Player");
+			playerHealth = player.GetComponent <PlayerHealth> ();
 			other.collider.rigidbody.velocity = new Vector3((-bounce)*other.collider.rigidbody.velocity.x, 0, (-bounce)*other.collider.rigidbody.velocity.z) ;
+			playerHealth.TakeDamage(10);
+		}
 	}
 }
