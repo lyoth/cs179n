@@ -46,9 +46,10 @@ public class EnemyAI : MonoBehaviour {
 		//player = GameObject.FindGameObjectWithTag(Tags.player);
 	}
 
+
 	// Update is called once per frame
 	void Update () {
-		print (state + "\t" + distanceToDestination + "\t" + firingRange);
+		print (state);
 		if (state.Equals (ATTACK)) {
 			Attacking();
 		} else if (state.Equals(CHASE)) {
@@ -69,8 +70,8 @@ public class EnemyAI : MonoBehaviour {
 	{
 		if (other.gameObject == player) {
 			float distance = Vector3.Distance (transform.position, player.transform.position);
-			print ("Distance" + distance);
-			if (distance > firingRange){ 
+			print ("Distance" + distance + "\t" + firingRange + "\t" + state);
+			if (distance > firingRange * 2){ 
 				Chasing();
 			} else {
 				Attacking();
@@ -82,6 +83,7 @@ public class EnemyAI : MonoBehaviour {
 	void OnTriggerExit (Collider other)
 	{
 		if (other.gameObject == player) {
+			ClearAttack();
 			Patrolling ();
 		}
 	}
@@ -127,6 +129,13 @@ public class EnemyAI : MonoBehaviour {
 		Move (transform.position, attackPosition, chaseSpeed);
 	}
 
+	void ClearAttack() {
+		attackDistance = 1000;
+		barrierPoints.Clear ();
+		attackBarrier = new Bounds ();
+		//distanceToDestination = 0;
+	}
+
 	void Attacking() {
 		state = ATTACK;
 		if (barrierPoints.Count == 0 || attackBarrier == null || !attackBarrier.Contains (player.transform.position)) {
@@ -143,12 +152,15 @@ public class EnemyAI : MonoBehaviour {
 
 	void Chasing() {
 		state = CHASE;
+		ClearAttack ();
 		Move (transform.position, player.transform.position, chaseSpeed);
 	}
 	
 	void Patrolling ()
 	{
 		state = PATROL;
+		ClearAttack ();
+
 		if (distanceToDestination == 0) {
 			//print ("State is NONE");
 			//state = "NONE";
@@ -162,7 +174,6 @@ public class EnemyAI : MonoBehaviour {
 			}
 			else {
 				wayPoint = patrolWayPoints[wayPointIndex];
-
 			}
 		}
 
