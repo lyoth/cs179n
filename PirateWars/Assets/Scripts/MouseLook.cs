@@ -11,7 +11,7 @@ public class MouseLook : MonoBehaviour {
 	float maxHoriz;
 	// Use this for initialization
 	void Start () {
-		myCamera = Camera.main.transform;
+	//		myCamera = Camera.main.transform;
 	}
 	
 	// Update is called once per frame
