@@ -5,9 +5,10 @@ public class EnemyAI : MonoBehaviour {
 
 
 	private GameObject player;							
-	public float patrolSpeed; // = 7f;							
 	public float rotationSpeed;
 	public float chaseSpeed; // = 5f;	
+	public float patrolSpeed; // = 7f;	
+	public float attackSpeed;
 	public float firingRange; // = 80;
 
 	//way point information
@@ -28,7 +29,7 @@ public class EnemyAI : MonoBehaviour {
 	private Vector3 attackPosition;
 	private float attackDistance;
 
-	// Use this for initialization
+	// Use thisw for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag(Tags.player);
 		wayPointIndex = -1;
@@ -115,7 +116,6 @@ public class EnemyAI : MonoBehaviour {
 
 		//construct points that are angled
 		for (int i = 15; i < 90; i = i + 15) {
-			print("I: " + i);
 			Vector3 angle = new Vector3 (0, i, 0);
 			barrierPoints.Add (RotatePointAroundPivot (left, center, angle));
 			barrierPoints.Add (RotatePointAroundPivot (right, center, angle));
@@ -123,10 +123,7 @@ public class EnemyAI : MonoBehaviour {
 			barrierPoints.Add (RotatePointAroundPivot (bottom, center, angle));
 		}
 
-		print ("Total number of points: " + barrierPoints.Count);
-
 		attackBarrier = new Bounds (center, new Vector3(firingRange * 2, 0, firingRange * 2));
-		//print ("barrier: " + attackBarrier.Contains (center)  + "\t" + attackBarrier.Contains(left) + "\t" + attackBarrier.Contains(right) + "\t" + attackBarrier.Contains(top) + "\t" + attackBarrier.Contains(bottom));
 	}
 
 	void Maneuver() {
@@ -146,7 +143,7 @@ public class EnemyAI : MonoBehaviour {
 			attackDistance = distanceTemp;
 		} 
 		//print ("travel to " + attackPosition +"\t" + attackPossibility + "\t" + transform.position + "\t" + player.transform.position);
-		Move (transform.position, attackPosition, chaseSpeed);
+		Move (transform.position, attackPosition, attackSpeed);
 	}
 
 	void ClearAttack() {
