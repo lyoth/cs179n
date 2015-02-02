@@ -15,6 +15,7 @@ public class CannonballCollision : MonoBehaviour {
 
 	GameObject player;
 	PlayerHealth playerHealth;
+	public GameObject explosion;
 
 	void OnTriggerEnter(Collider other) 
 	{
@@ -28,15 +29,17 @@ public class CannonballCollision : MonoBehaviour {
 			//call explosion animation?
 			//Despawn cannonball
 			Destroy (gameObject);
+			Instantiate(explosion, other.transform.position, other.transform.rotation);
 		}
 
-		else if(other.tag == "Enemy")
+		else if(other.tag == "EnemyShip")
 		{
 			//damage to enemy
 
 			//call explosion animation?
 			//despawn cannonball
 			Destroy (gameObject);
+			Instantiate(explosion, other.transform.position, other.transform.rotation);
 		}
 	}
 }
