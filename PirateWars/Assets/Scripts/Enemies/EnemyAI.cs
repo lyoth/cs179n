@@ -49,7 +49,7 @@ public class EnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		print (state);
+		//print (state);
 		if (state.Equals (ATTACK)) {
 			Attacking();
 		} else if (state.Equals(CHASE)) {
@@ -70,7 +70,7 @@ public class EnemyAI : MonoBehaviour {
 	{
 		if (other.gameObject == player) {
 			float distance = Vector3.Distance (transform.position, player.transform.position);
-			print ("Distance" + distance + "\t" + firingRange + "\t" + state);
+			//print ("Distance" + distance + "\t" + firingRange + "\t" + state);
 			if (distance > firingRange * 2){ 
 				Chasing();
 			} else {
@@ -88,6 +88,14 @@ public class EnemyAI : MonoBehaviour {
 		}
 	}
 
+	//TODO: change things up
+	public Vector3 RotatePointAroundPivot(Vector3 point, Vector3 pivot, Vector3 angles) {
+		Vector3 dir = point - pivot; // get point direction relative to pivot
+		dir = Quaternion.Euler(angles) * dir; // rotate it
+		point = dir + pivot; // calculate rotated point
+		return point; // return it
+	}
+
 	void ConstructBarrier() {
 		barrierPoints.Clear ();
 		Vector3 center = player.transform.position;
@@ -100,11 +108,23 @@ public class EnemyAI : MonoBehaviour {
 		top.z = top.z + firingRange;
 		bottom.z = bottom.z - firingRange;
 
-		//print ("BARRIER: " + center + "\t" + left + "\t" + right + "\t" + top + "\t" + bottom + "\t" + pointToTravel);
 		barrierPoints.Add (left);
 		barrierPoints.Add (right);
 		barrierPoints.Add (top);
 		barrierPoints.Add (bottom);
+
+		//construct points that are angled
+		for (int i = 15; i < 90; i = i + 15) {
+			print("I: " + i);
+			Vector3 angle = new Vector3 (0, i, 0);
+			barrierPoints.Add (RotatePointAroundPivot (left, center, angle));
+			barrierPoints.Add (RotatePointAroundPivot (right, center, angle));
+			barrierPoints.Add (RotatePointAroundPivot (top, center, angle));
+			barrierPoints.Add (RotatePointAroundPivot (bottom, center, angle));
+		}
+
+		print ("Total number of points: " + barrierPoints.Count);
+
 		attackBarrier = new Bounds (center, new Vector3(firingRange * 2, 0, firingRange * 2));
 		//print ("barrier: " + attackBarrier.Contains (center)  + "\t" + attackBarrier.Contains(left) + "\t" + attackBarrier.Contains(right) + "\t" + attackBarrier.Contains(top) + "\t" + attackBarrier.Contains(bottom));
 	}
