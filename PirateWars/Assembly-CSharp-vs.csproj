@@ -194,6 +194,7 @@
      <Compile Include="Assets\Scripts\CannonballCollision.cs" />
      <Compile Include="Assets\Scripts\ChangeCameras.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyAI.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemySight.cs" />
      <Compile Include="Assets\Scripts\LastPlayerSighting.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />

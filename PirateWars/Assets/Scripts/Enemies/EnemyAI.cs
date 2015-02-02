@@ -42,10 +42,10 @@ public class EnemyAI : MonoBehaviour {
 		state = PATROL; // start as patrolling enemies
 	}
 
+
 	void Awake() {
 		//player = GameObject.FindGameObjectWithTag(Tags.player);
 	}
-
 
 	// Update is called once per frame
 	void Update () {
