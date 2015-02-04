@@ -22,12 +22,5 @@ public class TerrainDestroyByContact : MonoBehaviour {
 		{
 			//damage to enemy
 		}
-		else
-		{
-			//despawn shots
-			Destroy (other.gameObject);
-			return;
-
-		}
 	}
 }
