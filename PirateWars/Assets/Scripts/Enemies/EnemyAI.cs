@@ -40,7 +40,7 @@ public class EnemyAI : MonoBehaviour {
 
 	// Use thisw for initialization
 	void Start () {
-		player = GameObject.FindGameObjectWithTag(Tags.player);
+		player = GameObject.FindGameObjectWithTag(Tags.playerShip);
 		wayPointIndex = -1;
 		distanceToDestination = 0;
 
@@ -124,14 +124,16 @@ public class EnemyAI : MonoBehaviour {
 		barrierPoints.Add (top);
 		barrierPoints.Add (bottom);
 
-		//construct points that are angled
-		for (int i = 15; i < 90; i = i + 15) {
-			Vector3 angle = new Vector3 (0, i, 0);
-			barrierPoints.Add (RotatePointAroundPivot (left, center, angle));
-			barrierPoints.Add (RotatePointAroundPivot (right, center, angle));
-			barrierPoints.Add (RotatePointAroundPivot (top, center, angle));
-			barrierPoints.Add (RotatePointAroundPivot (bottom, center, angle));
-		}
+
+		//TODO:
+//		//construct points that are angled
+//		for (int i = 15; i < 90; i = i + 15) {
+//			Vector3 angle = new Vector3 (0, i, 0);
+//			barrierPoints.Add (RotatePointAroundPivot (left, center, angle));
+//			barrierPoints.Add (RotatePointAroundPivot (right, center, angle));
+//			barrierPoints.Add (RotatePointAroundPivot (top, center, angle));
+//			barrierPoints.Add (RotatePointAroundPivot (bottom, center, angle));
+//		}
 
 		attackBarrier = new Bounds (center, new Vector3(firingRange * 2, 0, firingRange * 2));
 	}
@@ -208,6 +210,7 @@ public class EnemyAI : MonoBehaviour {
 	}
 	
 	void Move(Vector3 current, Vector3 destination, float speed) {
+		//print ("Move: " + current + "\tto " + destination);
 		if (destination - current != Vector3.zero) {
 			Quaternion rotation = Quaternion.LookRotation(destination - current);
 			transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);

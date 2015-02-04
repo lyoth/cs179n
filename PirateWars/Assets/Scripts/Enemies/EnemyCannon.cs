@@ -9,6 +9,7 @@ public class EnemyCannon : MonoBehaviour {
 	public float speed;
 	public Transform enemyShip;
 	private EnemyAI enemyAIscript;
+	private float fire;
 
 	// Use this for initializationf
 	void Start () {
@@ -17,13 +18,12 @@ public class EnemyCannon : MonoBehaviour {
 	
 	void Update()
 	{
-		//print ("Is in attack state? " + enemyAIscript.isAttackState() + "\t" + Time.deltaTime + "\t" + rateOfFire);
-		if (enemyAIscript.isAttackState() && enemyAIscript.userInSight() && Time.time > rateOfFire) {
-			rateOfFire = Time.time + rateOfFire;
-		//	print("~~~FIRE~~~");
-			//GameObject clone = (GameObject)Instantiate (cannonball, transform.position, transform.rotation);
-			//clone.rigidbody.velocity = transform.TransformDirection (new Vector3(0,0,speed));
-			//Physics.IgnoreCollision (clone.collider, transform.root.collider);
+		//print ("Is in attack state? " + enemyAIscript.isAttackState() + "\t" + Time.time + "\t" + fire);
+		if (enemyAIscript.isAttackState() && enemyAIscript.userInSight() && Time.time > fire) {
+			fire = Time.time + rateOfFire;
+			GameObject clone = (GameObject)Instantiate (cannonball, transform.position, transform.rotation);
+			clone.rigidbody.velocity = transform.TransformDirection (new Vector3(0,0,speed));
+			Physics.IgnoreCollision (clone.collider, enemyShip.transform.collider);
 		}
 	}
 }
