@@ -29,6 +29,15 @@ public class EnemyAI : MonoBehaviour {
 	private Vector3 attackPosition;
 	private float attackDistance;
 
+	public bool userInSight() {
+		//TODO:
+		return true;
+	}
+
+	public bool isAttackState() {
+		return (state.Equals(ATTACK)) ? true : false;
+	}
+
 	// Use thisw for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag(Tags.player);
@@ -69,6 +78,7 @@ public class EnemyAI : MonoBehaviour {
 
 	void OnTriggerStay (Collider other)
 	{
+		//print ("OnTriggerStay " + other.gameObject + "\t" + other);
 		if (other.gameObject == player) {
 			float distance = Vector3.Distance (transform.position, player.transform.position);
 			//print ("Distance" + distance + "\t" + firingRange + "\t" + state);
