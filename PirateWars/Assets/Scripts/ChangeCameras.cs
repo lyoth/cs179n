@@ -8,25 +8,25 @@ public class ChangeCameras: MonoBehaviour
 	public Camera cameraRight;
 
 	void Start() {
-		cameraMain.camera.active = true;
-		cameraLeft.camera.active = false;
-		cameraRight.camera.active = false;
+		cameraMain.active = true;
+		cameraLeft.active = false;
+		cameraRight.active = false;
 	}
 	void Update () {
 		if(Input.GetKey("q")){
-			cameraMain.camera.active = false;
-			cameraLeft.camera.active = true;
-			cameraRight.camera.active = false;
+			cameraMain.active = false;
+			cameraLeft.active = true;
+			cameraRight.active = false;
 		}
 		if(Input.GetKey("e")){
-			cameraMain.camera.active = false;
-			cameraLeft.camera.active = false;
-			cameraRight.camera.active = true;
+			cameraMain.active = false;
+			cameraLeft.active = false;
+			cameraRight.active = true;
 		}
 		if(Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d")){
-			cameraMain.camera.active = true;
-			cameraLeft.camera.active = false;
-			cameraRight.camera.active = false;
+			cameraMain.active = true;
+			cameraLeft.active = false;
+			cameraRight.active = false;
 		}
 	}
 }
