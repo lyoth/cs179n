@@ -4,10 +4,10 @@ using System.Collections;
 public class EnemyCannon : MonoBehaviour {
 
 	public GameObject cannonball;
+	public Transform enemyShip;
 	public float rateOfFire;
 	//float fireDelay;
 	public float speed;
-	public Transform enemyShip;
 	private EnemyAI enemyAIscript;
 	private float fire;
 
