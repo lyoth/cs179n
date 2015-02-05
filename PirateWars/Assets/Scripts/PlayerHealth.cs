@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour
 	{
 		// Set the death flag so this function won't be called again.
 		isDead = true;
-		
+		Application.LoadLevel("Game Main");
 		// Turn off the movement and shooting scripts.
 		//playerMovement.enabled = false;
 		//playerShooting.enabled = false;
