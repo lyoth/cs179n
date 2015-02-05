@@ -4,10 +4,10 @@ using System.Collections;
 public class EnemyCannon : MonoBehaviour {
 
 	public GameObject cannonball;
+	public Transform enemyShip;
 	public float rateOfFire;
 	//float fireDelay;
 	public float speed;
-	public Transform enemyShip;
 	private EnemyAI enemyAIscript;
 	private float fire;
 
@@ -23,7 +23,7 @@ public class EnemyCannon : MonoBehaviour {
 			fire = Time.time + rateOfFire;
 			GameObject clone = (GameObject)Instantiate (cannonball, transform.position, transform.rotation);
 			clone.rigidbody.velocity = transform.TransformDirection (new Vector3(0,0,speed));
-			Physics.IgnoreCollision (clone.collider, enemyShip.transform.collider);
+			//Physics.IgnoreCollision (clone.collider, enemyShip.transform.collider);
 		}
 	}
 }

@@ -20,12 +20,13 @@ public class CannonballCollisionEnemy : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) 
 	{
-		if (other.tag == "Player") 
+		if (other.tag == "PlayerShip") 
 		{
 			//damage to player
 			player = GameObject.FindGameObjectWithTag ("Player");
-			playerHealth = player.GetComponent <PlayerHealth> ();
-			playerHealth.TakeDamage(25);
+			//TODO: add back in health
+			//playerHealth = player.GetComponent <PlayerHealth> ();
+			//playerHealth.TakeDamage(25);
 			
 			//call explosion animation
 			Instantiate(explosion, other.transform.position, other.transform.rotation);
