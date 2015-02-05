@@ -27,14 +27,14 @@ public class CannonballCollisionEnemy : MonoBehaviour {
 			//damage to player
 			player = GameObject.FindGameObjectWithTag ("Player");
 			//TODO: add back in health
-			//playerHealth = player.GetComponent <PlayerHealth> ();
-			//playerHealth.TakeDamage(25);
+			playerHealth = player.GetComponent <PlayerHealth> ();
+			playerHealth.TakeDamage(25);
 			
 			//call explosion animation
 			Instantiate(explosion, other.transform.position, other.transform.rotation);
 			//Despawn cannonball
 			Destroy (gameObject);
-			Application.LoadLevel("Game Lost");
+			//Application.LoadLevel("Game Lost");
 		}
 		
 		else if (other.tag == "Terrain")
