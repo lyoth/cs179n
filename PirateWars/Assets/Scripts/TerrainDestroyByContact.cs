@@ -11,7 +11,6 @@ public class TerrainDestroyByContact : MonoBehaviour {
 		//ignores ships
 		if (other.tag == "Player") 
 		{
-			print ("collision!");
 			//player loses health, bounces off terrain
 			player = GameObject.FindGameObjectWithTag ("Player");
 			playerHealth = player.GetComponent <PlayerHealth> ();

@@ -64,6 +64,7 @@
      <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSpray.cs" />
      <Compile Include="Assets\Detonator Explosion Framework\TestScene\DetonatorTest.cs" />
      <Compile Include="Assets\Detonator Explosion Framework\TestScene\TouchToMouse.cs" />
+     <Compile Include="Assets\MenuScript.cs" />
      <Compile Include="Assets\Models\SampleAssets\2D\Scripts\Camera2DFollow.cs" />
      <Compile Include="Assets\Models\SampleAssets\2D\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Models\SampleAssets\2D\Scripts\Platformer2DUserControl.cs" />
@@ -215,7 +216,6 @@
      <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemySight.cs" />
      <Compile Include="Assets\Scripts\LastPlayerSighting.cs" />
-     <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Tags.cs" />

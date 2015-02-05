@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
 	public float currentHealth;                                   // The current health the player has.
 	public Slider healthSlider;                                 // Reference to the UI's health bar.
 	bool isDead;                                                // Whether the player is dead.
-	//bool damaged;                                               // True when the player gets damaged.
+	bool damaged;                                               // True when the player gets damaged.
 	
 	
 	void Awake ()
@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
 	public void TakeDamage (int amount)
 	{
 		// Set the damaged flag so the screen will flash.
-		//damaged = true;
+		damaged = true;
 		
 		// Reduce the current health by the damage amount.
 		currentHealth -= amount;
