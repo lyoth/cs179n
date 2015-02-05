@@ -24,6 +24,7 @@ public class EnemyCannon : MonoBehaviour {
 			GameObject clone = (GameObject)Instantiate (cannonball, transform.position, transform.rotation);
 			clone.rigidbody.velocity = transform.TransformDirection (new Vector3(0,0,speed));
 			//Physics.IgnoreCollision (clone.collider, enemyShip.transform.collider);
+			audio.Play();
 		}
 	}
 }

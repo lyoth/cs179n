@@ -34,6 +34,7 @@ public class CannonballCollisionEnemy : MonoBehaviour {
 			Instantiate(explosion, other.transform.position, other.transform.rotation);
 			//Despawn cannonball
 			Destroy (gameObject);
+			Application.LoadLevel("Game Lost");
 		}
 		
 		else if (other.tag == "Terrain")

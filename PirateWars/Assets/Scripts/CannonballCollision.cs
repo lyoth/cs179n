@@ -25,8 +25,10 @@ public class CannonballCollision : MonoBehaviour {
 			GameObject  enemy = GameObject.FindGameObjectWithTag ("HealthEnemyBar");
 			EnemyHealth health = enemy.GetComponent<EnemyHealth>();
 			health.hitDetection();
-			if (health.isDead()){ 
+			if (health.isDead())
+			{ 
 				Destroy (GameObject.FindGameObjectWithTag ("Enemy"));
+				Application.LoadLevel("Game Over");
 			}
 			//despawn cannonball
 			Destroy (gameObject);
