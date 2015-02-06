@@ -28,7 +28,7 @@ public class CannonballCollisionEnemy : MonoBehaviour {
 			player = GameObject.FindGameObjectWithTag ("Player");
 			//TODO: add back in health
 			playerHealth = player.GetComponent <PlayerHealth> ();
-			playerHealth.TakeDamage(25);
+			playerHealth.TakeDamage(20);
 			
 			//call explosion animation
 			Instantiate(explosion, other.transform.position, other.transform.rotation);
