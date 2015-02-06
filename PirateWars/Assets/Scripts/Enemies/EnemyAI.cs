@@ -59,7 +59,7 @@ public class EnemyAI : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		//print (state);
+		print (state);
 		if (state.Equals (ATTACK)) {
 			Attacking();
 		} else if (state.Equals(CHASE)) {
