@@ -108,6 +108,10 @@ public class EnemyAI : MonoBehaviour {
 	}
 
 	void ConstructBarrier() {
+		if (barrierPoints == null) {
+			barrierPoints = new ArrayList();		
+		}
+
 		barrierPoints.Clear ();
 		Vector3 center = player.transform.position;
 		Vector3 left = center;
@@ -119,6 +123,13 @@ public class EnemyAI : MonoBehaviour {
 		top.z = top.z + firingRange;
 		bottom.z = bottom.z - firingRange;
 
+		//set height in water to same
+		left.y = transform.position.y;
+		right.y = transform.position.y;
+		top.y = transform.position.y;
+		bottom.y = transform.position.y;
+
+
 		barrierPoints.Add (left);
 		barrierPoints.Add (right);
 		barrierPoints.Add (top);
@@ -126,16 +137,18 @@ public class EnemyAI : MonoBehaviour {
 
 
 		//TODO:
-//		//construct points that are angled
-//		for (int i = 15; i < 90; i = i + 15) {
-//			Vector3 angle = new Vector3 (0, i, 0);
-//			barrierPoints.Add (RotatePointAroundPivot (left, center, angle));
-//			barrierPoints.Add (RotatePointAroundPivot (right, center, angle));
-//			barrierPoints.Add (RotatePointAroundPivot (top, center, angle));
-//			barrierPoints.Add (RotatePointAroundPivot (bottom, center, angle));
-//		}
+		//construct points that are angled
+		for (int i = 30; i < 90; i = i + 30) {
+			Vector3 angle = new Vector3 (0, i, 0);
+			barrierPoints.Add (RotatePointAroundPivot (left, center, angle));
+			barrierPoints.Add (RotatePointAroundPivot (right, center, angle));
+			barrierPoints.Add (RotatePointAroundPivot (top, center, angle));
+			barrierPoints.Add (RotatePointAroundPivot (bottom, center, angle));
+		}
 
-		attackBarrier = new Bounds (center, new Vector3(firingRange * 2, 0, firingRange * 2));
+
+		//print ("Bounds: " + left + "\t" + right + "\t" + top + "\t" + bottom);
+		attackBarrier = new Bounds (center, new Vector3(firingRange * 2, firingRange * 2, firingRange * 2));
 	}
 
 	void Maneuver() {
@@ -154,7 +167,7 @@ public class EnemyAI : MonoBehaviour {
 			attackPosition = attackPossibility;
 			attackDistance = distanceTemp;
 		} 
-		//print ("travel to " + attackPosition +"\t" + attackPossibility + "\t" + transform.position + "\t" + player.transform.position);
+	//	print ("travel to " + attackPosition +"\t" + attackPossibility + "\t" + transform.position + "\t" + player.transform.position);
 		Move (transform.position, attackPosition, attackSpeed);
 	}
 
@@ -167,14 +180,18 @@ public class EnemyAI : MonoBehaviour {
 
 	void Attacking() {
 		state = ATTACK;
-		if (barrierPoints.Count == 0 || attackBarrier == null || !attackBarrier.Contains (player.transform.position)) {
+		//attackDistance = distanceToDestination;
+		//print ("is user in attackBarrier?: " + attackBarrier.Contains (player.transform.position));
+		if (barrierPoints == null || barrierPoints.Count == 0 || attackBarrier == null || !attackBarrier.Contains (player.transform.position)) {
+		//	print ("construct");
 			ConstructBarrier ();
 		} else if (attackDistance == 0) {
-			//print ("RESET");
+		//	print ("RESET");
 			barrierPoints.Remove(attackPosition);
 			attackDistance = 1000;
 			Maneuver();
 		}else {
+		//	print ("maneuver");
 			Maneuver();
 		}
 	}
@@ -218,5 +235,6 @@ public class EnemyAI : MonoBehaviour {
 
 		distanceToDestination = Vector3.Distance (current, destination);
 		transform.position = Vector3.MoveTowards(current, destination, speed * Time.deltaTime);
+		//print ("current: " + current + "\t" + destination);
 	}
 }

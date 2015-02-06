@@ -20,10 +20,10 @@ public class CannonballCollisionEnemy : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) 
 	{
-		print (other + "\t" + other.tag);
+		//print (other + "\t" + other.tag);
 		if (other.tag == "PlayerShip" | other.tag == "Player") 
 		{
-			print ("HIT TAKEN");
+		//	print ("HIT TAKEN");
 			//damage to player
 			player = GameObject.FindGameObjectWithTag ("Player");
 			//TODO: add back in health
